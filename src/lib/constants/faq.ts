@@ -1,70 +1,42 @@
 export const FAQS = [
   {
-    q: "How do I ask for help during the Hackathon?",
-    a: "The best place to ask for help is on the HackTheBurgh Discord, which you can access via the discord invite sent to your email address as a participant. Please make a ticket through the #get-help channel and we’ll be with you as soon as possible. If you need help in-person, our volunteers and organizers are wearing HackTheBurgh t-shirts and hoodies to help you spot us! Organizers & Volunteers have a white shirt with the HackTheBurgh logo. Please don’t hesitate to ask us for help.",
+    q: "Who can participate?",
+    a: 'The BioHackathon is open to <span class="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span class="font-semibold">all UK universities</span> interested in biological and computational innovation.',
   },
   {
-    q: "What is the HackTheBurgh Code of Conduct?",
-    a: 'The HackTheBurgh Code of Conduct can be found  <a href="/documents/HTB-Code-of-Conduct.pdf">here</a>.',
+    q: "Do participants need coding experience?",
+    a: 'Not at all — while some challenges involve coding, there are dedicated <span class="font-semibold">non-coding tracks</span> focused on experimental design, problem-solving, and communication, ensuring everyone can contribute meaningfully.',
   },
   {
-    q: "When do applications close?",
-    a: "Applications will close on 29th September.",
+    q: "How are teams formed?",
+    a: 'Participants can <span class="font-semibold">apply as individuals or as teams</span> of 3-6 members. Individual applicants will have the chance to form teams during <span class="font-semibold">in-person networking and team formation sessions</span> prior to the event.',
   },
   {
-    q: "Is there a travel reimbursement?",
-    a: "If you are travelling from outside Edinburgh, we may be able to reimburse you based on the distance from your university to Edinburgh. For <100km : up to £20. For 100-300km : up to £40. For >300km : up to £55",
+    q: "Will there be prizes or certificates?",
+    a: 'Yes — <span class="font-semibold">winning teams will receive prizes and certificates of participation</span>, recognising creativity, innovation, and collaboration.',
   },
   {
-    q: "What are the rules of the hackathon?",
-    a: 'Please see the HackTheBurgh Rules <a href="/documents/HTB-Rules.pdf" target="_blank" rel="noopener noreferrer">here</a>.',
+    q: "What kind of support is available during the event?",
+    a: 'Participants will have access to <span class="font-semibold">pre-event workshops</span> (on technical skills, entrepreneurship, IP, Python, and Git) and mentorship from academic and industry experts linked to each challenge.<br /><span class="font-semibold">Travel support</span> will be available, with <span class="font-semibold">partial to full reimbursement (up to £60 per person)</span> based on competition and need.',
   },
   {
-    q: "When will I hear back on my application?",
-    a: "We aim to get back to you on your application by the 6th October.",
+    q: "How much time commitment is expected?",
+    a: ' Workshops are <span class="font-semibold">optional</span> and can be selected based on individual skill levels. The hackathon itself will likely run <span class="font-semibold">over a weekend (2-3 days)</span> or as a <span class="font-semibold">hybrid week-long event</span> with in-person sessions at the beginning and end, and flexible online collaboration in between.',
   },
   {
-    q: "How many people are allowed on a team?",
-    a: "A minimum of 4 people are required to form a team, however teams of up to 6 people are allowed.",
+    q: "How can someone propose a challenge or get involved as a mentor or sponsor?",
+    a: 'Interested academics or partners can <span class="font-semibold">email the organising team at <a href="mailto:ian.yang@ed.ac.uk">ian.yang@ed.ac.uk</a></span> to discuss challenge proposals, mentoring, or sponsorship opportunities.',
   },
   {
-    q: "Who can attend?",
-    a: "To be eligible to participate, you only have to be a current student from any university, or have graduated within a year! We encourage anyone from any degree discipline, technical or not, to enjoy HackTheBurgh and show off your skills throughout the weekend. Unfortunately, due to logistical and legal constraints, we are unable to host under 18s.",
+    q: "What are the key dates?",
+    a: 'Final dates for the workshops and the main BioHackathon are <span class="font-semibold">to be confirmed</span>, but the event is planned for <span class="font-semibold">Spring 2026</span>.',
   },
   {
-    q: "How will our applications be judged?",
-    a: "We evaluate applications based on technical merit demonstrated through your CV, Github, and application responses, with consideration given to your year of study.",
+    q: "Will there be opportunities for projects to continue after the hackathon?",
+    a: 'Yes — selected projects may receive <span class="font-semibold">continued mentorship or sponsorship support</span>, depending on partner interest and participant initiative.',
   },
   {
-    q: "What if I don’t have a team?",
-    a: "Don’t worry, we’ll have a Discord channel for participants to form teams before the event. You can also form a team when you arrive on the day.",
-  },
-  {
-    q: "What is the difference between applying individually or as a team?",
-    a: "If you apply as a team, you will be judged as a team and either all of you will be accepted or none of you will be. If you apply individually, you will be judged individually and accepted individually; you can then form a team on the day or on Discord.",
-  },
-  {
-    q: "Do I need loads of experience to participate?",
-    a: "Not at all. Whether you’re a first year student, study a subject unrelated to computing, or this is your first Hackathon, you are still welcome to enter HackTheBurgh. This is a great opportunity to learn and gain new experience!",
-  },
-  {
-    q: "What am I supposed to build / hack during the weekend?",
-    a: "You have complete freedom in what you build at our hackathon! Don’t worry about making your hack polished or perfect - we know there’s limited time. We hope HackTheBurgh serves as a launchpad for you to start a project you can continue working on even after the event ends.",
-  },
-  {
-    q: "What time does HTB start and end?",
-    a: "HTB runs on the weekend of the 1st-2nd November. Registration starts from 9:00 on the 15th September and our closing ceremony concludes at 17:00 on the Sunday.",
-  },
-  {
-    q: "What about food?",
-    a: "We’ll provide food, snacks and drinks through the day. We will ask you about any dietary restrictions and share the food options available from our vendors after you’ve been accepted into the event.",
-  },
-  {
-    q: "What should I bring?",
-    a: "Valid student ID, laptop, charger.",
-  },
-  {
-    q: "What if I have any other questions?",
-    a: 'Contact us at <a href="mailto:team@hacktheburgh.com">team@hacktheburgh.com</a> or you can ask us questions in the #get-help channel in the Discord.',
+    q: "Who's organising the BioHackathon?",
+    a: 'The event is organised by <span class="font-semibold">Ian Yang (Swain Lab, School of Biological Sciences)</span> in collaboration with the <span class="font-semibold">Centre for Engineering Biology</span> and partners across the University of Edinburgh. For all inquiries, contact <span class="font-semibold"><a href="mailto:ian.yang@ed.ac.uk">ian.yang@ed.ac.uk</a></span>.',
   },
 ];

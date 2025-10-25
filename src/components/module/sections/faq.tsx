@@ -45,12 +45,24 @@ export default function FAQSection() {
         )
         .fromTo(
           element,
-          { backgroundColor: "#ffffff" },
-          { backgroundColor: "#E5E5E5", duration: 0.3 },
+          { backgroundColor: "#FFFFFF" },
+          { backgroundColor: "#FAFAFA", duration: 0.3 },
           0
         )
         .reverse();
     });
+  }, []);
+
+  // Open all FAQ cards by default on larger screens (>= 1024px).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const setAllOpen = (matches: boolean) => {
+      setOpenItems(matches ? new Set(FAQS.map((_, i) => i)) : new Set());
+    };
+
+    setAllOpen(mq.matches);
   }, []);
 
   useEffect(() => {
@@ -70,10 +82,10 @@ export default function FAQSection() {
 
   const toggle = (idx: number) => {
     setOpenItems((prev) => {
-      const next = new Set<number>();
-      // If clicking on an already open item, close it (empty set)
-      // If clicking on a closed item, open only that one
-      if (!prev.has(idx)) {
+      const next = new Set(prev);
+      if (next.has(idx)) {
+        next.delete(idx);
+      } else {
         next.add(idx);
       }
       return next;

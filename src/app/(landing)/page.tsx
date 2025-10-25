@@ -19,7 +19,7 @@ export default function Page() {
         </NavbarLayout>
       </div>
 
-      <div
+      {/* <div
         id="schedule"
         className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
       >
@@ -35,20 +35,20 @@ export default function Page() {
             <span>Keep scrolling to see the full schedule</span>
           </p>
         </NavbarLayout>
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         id="sponsors"
         className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
       >
         <Sponsors />
-      </div>
+      </div> */}
 
-      <div id="team" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
+      {/* <div id="team" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
         <NavbarLayout>
           <Team />
         </NavbarLayout>
-      </div>
+      </div> */}
 
       <div
         id="faq"
@@ -57,14 +57,14 @@ export default function Page() {
         <FAQSection />
       </div>
 
-      <div
+      {/* <div
         id="volunteer"
         className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
       >
         <NavbarLayout className="flex h-screen items-center">
           <Volunteer />
         </NavbarLayout>
-      </div>
+      </div> */}
     </main>
   );
 }
