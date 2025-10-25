@@ -585,11 +585,11 @@ export default function Navbar() {
               <NavLinks />
             </div>
 
-            <div className="flex h-full items-center px-4">
+            {/* <div className="flex h-full items-center px-4">
               <div className="hidden lg:flex">
                 <ActionButton onOpenSignIn={() => setSignInDrawerOpen(true)} />
               </div>
-            </div>
+            </div> */}
           </nav>
 
           <div

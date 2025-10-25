@@ -9,6 +9,7 @@ import FAQSection from "~/components/module/sections/faq";
 import Sponsors from "~/components/module/sections/sponsors";
 import Team from "~/components/module/sections/team";
 import { Main } from "~/components/module/sections/main";
+import Tracks from "~/components/module/sections/tracks";
 
 export default function Page() {
   return (
@@ -37,6 +38,15 @@ export default function Page() {
         </NavbarLayout>
       </div> */}
 
+      <div
+        id="tracks"
+        className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
+      >
+        <NavbarLayout>
+          <Tracks />
+        </NavbarLayout>
+      </div>
+
       {/* <div
         id="sponsors"
         className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
@@ -44,11 +54,11 @@ export default function Page() {
         <Sponsors />
       </div> */}
 
-      {/* <div id="team" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
+      <div id="team" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
         <NavbarLayout>
           <Team />
         </NavbarLayout>
-      </div> */}
+      </div>
 
       <div
         id="faq"
