@@ -7,7 +7,8 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
+    // Just landing page for now, and no DB needed yet so defaulting to a placeholder value.
+    DATABASE_URL: z.string().url().default("postgresql://user:password@localhost:5432/dbname"),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
