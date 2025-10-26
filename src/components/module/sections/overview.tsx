@@ -2,7 +2,7 @@ import SectionHeader from "../section-header";
 
 export default function Overview() {
   return (
-    <section id="team" className="pb-10 sm:pb-16">
+    <section className="pb-10 sm:pb-16">
       <SectionHeader
         title="Overview"
         subtitle=""

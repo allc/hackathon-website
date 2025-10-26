@@ -11,6 +11,7 @@ import Team from "~/components/module/sections/team";
 import { Main } from "~/components/module/sections/main";
 import Tracks from "~/components/module/sections/tracks";
 import Overview from "~/components/module/sections/overview";
+import Structure from "~/components/module/sections/structure";
 
 export default function Page() {
   return (
@@ -60,6 +61,12 @@ export default function Page() {
       >
         <Sponsors />
       </div> */}
+
+      <div id="structure" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
+        <NavbarLayout>
+          <Structure />
+        </NavbarLayout>
+      </div>
 
       <div id="team" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
         <NavbarLayout>
