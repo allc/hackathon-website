@@ -2,7 +2,7 @@ import SectionHeader from "../section-header";
 
 export default function Tracks() {
   return (
-    <section id="tracks" className="pb-10 sm:pb-16">
+    <section className="pb-10 sm:pb-16">
       <SectionHeader
         title="Challenge Tracks"
         subtitle=""
@@ -21,6 +21,7 @@ export default function Tracks() {
           Work on problem statements proposed by industry partners from biotech, health, and data-driven companies. These challenges are practical, outcome-focused, and aim to translate ideas into prototypes, pipelines, or analytical insights. Participants gain direct exposure to industrial R&D workflows and potential recruitment opportunities.
         </p>
         <h2 className="mt-8 text-2xl font-bold">Data Sonification & Visualisation Track</h2>
+        <div id="non-coder-track-anchor" />
         <p className="mt-2 mb-4">
           Bridge science and creativity by transforming biological data into sound or interactive visual experiences. This track welcomes artists, musicians, and communicators alongside scientists and coders, exploring how multisensory representations can make complex data more intuitive and engaging.
         </p>

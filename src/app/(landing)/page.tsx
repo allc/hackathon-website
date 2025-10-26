@@ -10,6 +10,7 @@ import Sponsors from "~/components/module/sections/sponsors";
 import Team from "~/components/module/sections/team";
 import { Main } from "~/components/module/sections/main";
 import Tracks from "~/components/module/sections/tracks";
+import Overview from "~/components/module/sections/overview";
 
 export default function Page() {
   return (
@@ -17,6 +18,12 @@ export default function Page() {
       <div id="about" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
         <NavbarLayout className="relative h-screen py-0">
           <Main />
+        </NavbarLayout>
+      </div>
+
+      <div id="overview" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
+        <NavbarLayout>
+          <Overview />
         </NavbarLayout>
       </div>
 

@@ -1,11 +1,11 @@
 export const FAQS = [
-  {
-    q: "Who can participate?",
-    a: 'The BioHackathon is open to <span class="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span class="font-semibold">all UK universities</span> interested in biological and computational innovation.',
-  },
+  // {
+  //   q: "Who can participate?",
+  //   a: 'The BioHackathon is open to <span class="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span class="font-semibold">all UK universities</span> interested in biological and computational innovation.',
+  // },
   {
     q: "Do participants need coding experience?",
-    a: 'Not at all — while some challenges involve coding, there are dedicated <span class="font-semibold">non-coding tracks</span> focused on experimental design, problem-solving, and communication, ensuring everyone can contribute meaningfully.',
+    a: 'Not at all — while some challenges involve coding, there are dedicated <a class="font-semibold" href="#non-coder-track-anchor">non-coding tracks</a> focused on experimental design, problem-solving, and communication, ensuring everyone can contribute meaningfully.',
   },
   {
     q: "How are teams formed?",
