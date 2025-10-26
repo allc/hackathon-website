@@ -41,7 +41,6 @@ export default function Structure() {
 
       <div className="mt-12 px-4">
         <div className="relative">
-          <div className="absolute left-5 top-0 h-full w-px bg-gray-300"></div>
           <TimelineItem
             icon={<ClipboardDocumentListIcon className="h-6 w-6 text-blue-500" />}
             date="Oct-Dec 2025"
