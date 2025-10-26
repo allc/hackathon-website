@@ -12,9 +12,9 @@ import { Toaster } from "~/components/ui/sonner";
 import { type ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Hack The Burgh XII",
-  description: "Hack The Burgh XII",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "BioHackathon Edinburgh 2026",
+  description: "BioHackathon Edinburgh 2026 - Building a Collaborative Bio-AI Innovation Community",
+  // icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 const ibmPlexMono = IBM_Plex_Mono({
