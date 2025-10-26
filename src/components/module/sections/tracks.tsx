@@ -29,7 +29,7 @@ export default function Tracks() {
         <p className="mt-2 mb-4">
           For participants without a coding background, this track focuses on designing experimental frameworks, conceptual solutions, and project management strategies for interdisciplinary challenges. Activities include problem-based team exercises, scientific storytelling, and collaborative design thinking.
         </p>
-        <p className="mt-2 mb-4">
+        <p className="mt-2 mb-4 italic">
           Teams participating in each track will compete against each other in <span className="font-semibold">a final presentation and pitch session</span>, with awards for winners which are selected by a judging panel.
         </p>
       </div>
