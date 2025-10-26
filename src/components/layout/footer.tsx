@@ -105,7 +105,11 @@ const Footer = () => {
     <div className="relative z-50 grid w-full gap-4 bg-black p-5 sm:p-6 md:h-96 md:grid-cols-4 md:grid-rows-5">
       <div className="flex items-center justify-center border-zinc-800 px-0 md:col-span-2 md:row-span-4 md:border-b-0 md:border-r">
         <div className="select-none font-bold text-white md:ml-5 md:mr-7">
-          BioHackathon Edinburgh
+          BioHackathon Edinburgh 2026
+          <br />
+          <span className="mt-2 text-[0.6rem] font-thin uppercase text-white opacity-50">
+            Building a Collaborative Bio-AI Innovation Community
+          </span>
         </div>
       </div>
 
