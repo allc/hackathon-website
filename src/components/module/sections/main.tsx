@@ -1,8 +1,10 @@
+import backgroundImage from '../../../../public/htb-photos/team.png'; // placeholder image for now
+
 export const Main = () => (
   <div
     className="relative flex h-full w-full items-center justify-center"
     style={{
-      backgroundImage: `url('/htb-photos/team.png')`,
+      backgroundImage: `url('${backgroundImage.src}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}
