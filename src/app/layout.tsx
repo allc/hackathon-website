@@ -70,7 +70,7 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
       <html
         lang="en"
         className={`${ibmPlexMono.className} ${hexaframe.variable} ${whyteInktrap.variable} ${GeistSans.variable} dark`}
@@ -90,6 +90,6 @@ export default async function RootLayout({
           <Analytics />
         </body>
       </html>
-    </ClerkProvider>
+    // </ClerkProvider>
   );
 }

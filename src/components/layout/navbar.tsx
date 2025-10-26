@@ -596,12 +596,12 @@ export default function Navbar() {
         />
       </div>
 
-      {mounted && (
+      {/* {mounted && (
         <SignInDrawer
           open={signInDrawerOpen}
           onOpenChange={setSignInDrawerOpen}
         />
-      )}
+      )} */}
     </>
   );
 }
