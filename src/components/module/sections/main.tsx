@@ -1,26 +1,34 @@
 export const Main = () => (
-  <div className="relative flex h-full w-full items-center justify-center">
-    <div className="flex scale-90 transform flex-col items-center px-4 text-center sm:scale-100">
-      <h1 className="mt-3 text-4xl font-extrabold sm:text-6xl md:text-6xl 2xl:text-6xl">
+  <div
+    className="relative flex h-full w-full items-center justify-center"
+    style={{
+      backgroundImage: `url('/htb-photos/team.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
+    <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="relative flex scale-90 transform flex-col items-center px-4 text-center sm:scale-100">
+      <h1 className="mt-3 text-4xl font-extrabold text-white sm:text-6xl md:text-6xl 2xl:text-6xl">
         BioHackathon Edinburgh 2026
       </h1>
-      <p className="mt-10 text-lg font-medium sm:text-2xl 2xl:text-3xl">
+      <p className="mt-10 text-lg font-medium text-white sm:text-2xl 2xl:text-3xl">
         Building a Collaborative Bio-AI Innovation Community
       </p>
-      <p className="mt-6 max-w-3xl px-2 text-center">
+      <p className="mt-6 max-w-3xl px-2 text-center text-white">
         Spring 2026, TBC — Nucleus Building, University of Edinburgh
       </p>
-      <p className="mt-6 max-w-3xl px-2 text-center">
+      <p className="mt-6 max-w-3xl px-2 text-center text-white">
         Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <a className="font-semibold" href="#non-coder-track-anchor">No coding experience required.</a>
       </p>
 
       <div className="mt-8 flex w-full max-w-sm items-center justify-center gap-6 sm:mt-10">
-        <button className="bg-black px-5 py-3 text-white hover:bg-gray-800">
-          <a href="https://forms.office.com/e/Wm4nmLv3px">Register Interest</a>
-        </button>
-        <button className="bg-black px-5 py-3 text-white hover:bg-gray-800">
-          <a href="mailto:ian.yang@ed.ac.uk">Email</a>
-        </button>
+        <a href="https://forms.office.com/e/Wm4nmLv3px" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
+          Register Interest
+        </a>
+        <a href="mailto:ian.yang@ed.ac.uk" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
+          Email
+        </a>
       </div>
     </div>
   </div>
