@@ -7,7 +7,8 @@ import SignInDrawer from "~/components/module/sign-in-dialog-form";
 import { useRouter } from "next/navigation";
 
 export default function ApplicationsClosedWithSignIn() {
-  const { isSignedIn, isLoaded } = useUser();
+  // const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded } = { isSignedIn: false, isLoaded: true }; // Temporary stub
 
   const [signInOpen, setSignInOpen] = useState(false);
   const router = useRouter();
@@ -56,11 +57,11 @@ export default function ApplicationsClosedWithSignIn() {
         </div>
       </main>
 
-      <SignInDrawer
+      {/* <SignInDrawer
         open={signInOpen}
         onOpenChange={setSignInOpen}
         onSignedIn={handleSignedIn}
-      />
+      /> */}
     </>
   );
 }
