@@ -485,7 +485,7 @@ const MobileDrawer = ({
             </div>
           </section>
 
-          <section className="flex items-start px-6 py-8">
+          {/* <section className="flex items-start px-6 py-8">
             <div className="shrink-0 basis-1/3 pr-4">
               <div className="flex items-center gap-2 text-[9px] uppercase text-white">
                 <span className="h-1 w-1 bg-white" />
@@ -504,34 +504,17 @@ const MobileDrawer = ({
                 </a>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className="flex flex-col items-center py-8 text-xs uppercase">
             <div className="text-[10px] text-neutral-600">
               MADE WITH &lt;3 BY:{" "}
-              <a href="https://danyilbutov.com/" className="underline">
-                Danyil
-              </a>
-              ,{" "}
-              <a href="https://itskay.co" className="underline">
-                KAY
-              </a>{" "}
-              ,{" "}
-              <a href="https://emilymiller.xyz" className="underline">
-                Emily
-              </a>
-              ,{" "}
-              <a
-                href="https://www.linkedin.com/in/yuna-shono-1b3431188?"
-                className="underline"
-              >
-                Yuna
-              </a>
-              , Abibabis
+              Jinxuan
+              {" "} | Thanks to <a href="https://hacktheburgh.com" className="underline">Hack The Burgh</a> for kindly letting us adapt their website design and code.
             </div>
-            <div className="mt-2 text-[10px] text-neutral-600">
+            {/* <div className="mt-2 text-[10px] text-neutral-600">
               {COPYRIGHT_TEXT}
-            </div>
+            </div> */}
           </section>
         </div>
       </DrawerContent>

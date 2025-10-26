@@ -111,7 +111,7 @@ const Footer = () => {
 
       <div className="grid grid-cols-2 gap-4 md:hidden">
         <FooterSection title="Discover" items={NAV_LINKS} />
-        {/* <FooterSection title="Follow Us" items={SOCIAL_LINKS} /> */}
+        <FooterSection title="Contact" items={SOCIAL_LINKS} />
       </div>
 
       <FooterSection
@@ -119,11 +119,11 @@ const Footer = () => {
         items={NAV_LINKS}
         className="hidden md:col-start-3 md:row-span-4 md:flex md:px-5 md:pl-1"
       />
-      {/* <FooterSection
-        title="Follow Us"
+      <FooterSection
+        title="Contact"
         items={SOCIAL_LINKS}
         className="hidden border-zinc-800 md:col-start-4 md:row-span-4 md:flex md:border-l md:px-5"
-      /> */}
+      />
 
       <div className="flex flex-col items-center justify-center gap-2 border-t border-zinc-800 px-5 py-3 sm:flex-row sm:justify-between sm:px-10 md:col-span-4 md:row-start-5">
         <div className="hidden text-[0.6rem] uppercase text-white opacity-50 md:block">

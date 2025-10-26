@@ -5,6 +5,9 @@ export type NavLink = {
 
 export const NAV_LINKS: NavLink[] = [
   { href: "/#about", label: "ABOUT" },
+  { href: "/#overview", label: "OVERVIEW" },
+  { href: "/#tracks", label: "TRACKS" },
+  { href: "/#structure", label: "STRUCTURE" },
   // { href: "/#schedule", label: "SCHEDULE" },
   { href: "/#team", label: "TEAM" },
   { href: "/#faq", label: "FAQ" },
@@ -12,7 +15,6 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS: NavLink[] = [
-  { label: "GITHUB", href: "https://github.com/compsoc-edinburgh/htb25-26" },
-  { label: "INSTAGRAM", href: "https://www.instagram.com/hacktheburgh" },
-  { label: "LINKEDIN", href: "https://www.linkedin.com/company/hacktheburgh/" },
+  { label: "REGISTER INTEREST", href: "https://forms.office.com/e/Wm4nmLv3px" },
+  { label: "Email", href: "mailto:ian.yang@ed.ac.uk" },
 ];
