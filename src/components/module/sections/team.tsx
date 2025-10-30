@@ -353,9 +353,9 @@ export default function Team() {
       />
 
       <div className="mt-10 grid grid-cols-2 justify-center gap-4 px-4 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-12">
-        {/* {TEAM_MEMBERS.map((m) => (
+        {TEAM_MEMBERS.map((m) => (
           <TeamCard key={m.name} member={m} />
-        ))} */}
+        ))}
       </div>
     </section>
   );
