@@ -40,7 +40,6 @@ export default function Tracks() {
               <MusicalNoteIcon className="h-8 w-8 text-blue-600" />
             </div>
             <h2 className="mt-4 text-xl font-bold">Data Sonification & Visualisation Track</h2>
-            <div id="non-coder-track-anchor" />
             <p className="mt-2 text-gray-600">
               Bridge science and creativity by transforming biological data into sound or interactive visual experiences. This track welcomes artists, musicians, and communicators alongside scientists and coders, exploring how multisensory representations can make complex data more intuitive and engaging.
             </p>

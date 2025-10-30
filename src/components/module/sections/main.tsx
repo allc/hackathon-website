@@ -21,7 +21,7 @@ export const Main = () => (
         Spring 2026, TBC — Nucleus Building, University of Edinburgh
       </p>
       <p className="mt-6 max-w-3xl px-2 text-center text-white">
-        Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <a className="font-semibold" href="#non-coder-track-anchor">No coding experience required.</a>
+        Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <a className="font-semibold" href="#:~:text=For%20participants,design%20thinking.">No coding experience required.</a>
       </p>
 
       <div className="mt-8 flex w-full max-w-sm items-center justify-center gap-6 sm:mt-10">
