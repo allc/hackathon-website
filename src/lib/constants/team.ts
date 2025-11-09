@@ -15,6 +15,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/team/ian.jpg",
   },
   {
+    name: "Adriana",
+    role: "",
+    bio: "",
+    image: "/team/adriana.jpg",
+  },
+  {
+    name: "Apple",
+    role: "",
+    bio: "",
+    image: "/team/apple.jpg",
+  },
+  {
     name: "Jinxuan",
     role: "Tech",
     bio: "meow",
