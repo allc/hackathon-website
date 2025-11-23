@@ -5,7 +5,7 @@ export const FAQS = [
   // },
   {
     q: "Do participants need coding experience?",
-    a: 'Not at all — while some challenges involve coding, there are dedicated <a class="font-semibold" href="#non-coder-track-anchor">non-coding tracks</a> focused on experimental design, problem-solving, and communication, ensuring everyone can contribute meaningfully.',
+    a: 'Not at all — while some challenges involve coding, there are dedicated <a class="font-semibold" href="#:~:text=For%20participants,design%20thinking.">non-coding tracks</a> focused on experimental design, problem-solving, and communication, ensuring everyone can contribute meaningfully.',
   },
   {
     q: "How are teams formed?",
