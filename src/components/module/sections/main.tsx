@@ -1,15 +1,15 @@
-import backgroundImage from '../../../../public/htb-photos/team.png'; // placeholder image for now
+// import backgroundImage from '../../../../public/htb-photos/team.png'; // placeholder image for now
 
 export const Main = () => (
   <div
     className="relative flex h-full w-full items-center justify-center"
     style={{
-      backgroundImage: `url('${backgroundImage.src}')`,
+      // backgroundImage: `url('${backgroundImage.src}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}
   >
-    <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="absolute inset-0 bg-black opacity-80"></div>
     <div className="relative flex scale-90 transform flex-col items-center px-4 text-center sm:scale-100">
       <h1 className="mt-3 text-4xl font-extrabold text-white sm:text-6xl md:text-6xl 2xl:text-6xl">
         BioHackathon Edinburgh 2026
@@ -17,8 +17,8 @@ export const Main = () => (
       <p className="mt-10 text-lg font-medium text-white sm:text-2xl 2xl:text-3xl">
         Building a Collaborative Bio-AI Innovation Community
       </p>
-      <p className="mt-6 max-w-3xl px-2 text-center text-white">
-        Spring 2026, TBC — Nucleus Building, University of Edinburgh
+      <p className="mt-6 max-w-4xl px-2 text-center text-white">
+        20th - 22nd Mar 2026 (Subject to change) — Nucleus Building, University of Edinburgh
       </p>
       <p className="mt-6 max-w-3xl px-2 text-center text-white">
         Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <a className="font-semibold" href="#:~:text=For%20participants,design%20thinking.">No coding experience required.</a>
