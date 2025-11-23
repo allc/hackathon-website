@@ -24,9 +24,12 @@ export const Main = () => (
         Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <a className="font-semibold" href="#:~:text=For%20participants,design%20thinking.">No coding experience required.</a>
       </p>
 
-      <div className="mt-8 flex w-full max-w-sm items-center justify-center gap-6 sm:mt-10">
+      <div className="mt-8 flex w-full max-w-xl items-center justify-center gap-6 sm:mt-10">
         <a href="https://forms.office.com/e/Wm4nmLv3px" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
           Register Interest
+        </a>
+        <a href="https://forms.office.com/e/kZaw6FTEYR" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
+          Submit a Challenge
         </a>
         <a href="mailto:ian.yang@ed.ac.uk" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
           Email

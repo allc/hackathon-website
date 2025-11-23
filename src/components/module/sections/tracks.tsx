@@ -14,7 +14,7 @@ export default function Tracks() {
           To cater to diverse backgrounds and interests, BioHackathon Edinburgh 2026 will feature several <span className="font-semibold">challenge tracks</span>, each designed to bring together participants from life sciences, computing, and related disciplines.
         </p>
         
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-3">
           <div className="flex flex-col items-center rounded-lg border p-6 text-center shadow-lg">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
               <BeakerIcon className="h-8 w-8 text-blue-600" />
@@ -32,16 +32,6 @@ export default function Tracks() {
             <h2 className="mt-4 text-xl font-bold">Industry Innovation Track</h2>
             <p className="mt-2 text-gray-600">
               Work on problem statements proposed by industry partners from biotech, health, and data-driven companies. These challenges are practical, outcome-focused, and aim to translate ideas into prototypes, pipelines, or analytical insights. Participants gain direct exposure to industrial R&D workflows and potential recruitment opportunities.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center rounded-lg border p-6 text-center shadow-lg">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-              <MusicalNoteIcon className="h-8 w-8 text-blue-600" />
-            </div>
-            <h2 className="mt-4 text-xl font-bold">Data Sonification & Visualisation Track</h2>
-            <p className="mt-2 text-gray-600">
-              Bridge science and creativity by transforming biological data into sound or interactive visual experiences. This track welcomes artists, musicians, and communicators alongside scientists and coders, exploring how multisensory representations can make complex data more intuitive and engaging.
             </p>
           </div>
 

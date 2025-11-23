@@ -16,5 +16,6 @@ export const NAV_LINKS: NavLink[] = [
 
 export const SOCIAL_LINKS: NavLink[] = [
   { label: "REGISTER INTEREST", href: "https://forms.office.com/e/Wm4nmLv3px" },
+  { label: "Submit a Challenge", href: "https://forms.office.com/e/kZaw6FTEYR" },
   { label: "Email", href: "mailto:ian.yang@ed.ac.uk" },
 ];
