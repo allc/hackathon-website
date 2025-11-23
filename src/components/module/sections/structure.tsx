@@ -64,7 +64,7 @@ export default function Structure() {
           </TimelineItem>
           <TimelineItem
             icon={<TrophyIcon className="h-6 w-6 text-blue-500" />}
-            date="20th - 22th Mar 2026 (Subject to change)"
+            date="20th - 22nd Mar 2026 (Subject to change)"
             title="BioHackathon"
           >
             <p>2-3 day event at <span className="font-semibold">The Nucleus</span>, featuring an opening ceremony, challenge introductions, team sprints, and final project pitches with prizes.</p>
