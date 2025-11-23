@@ -22,9 +22,27 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Apple",
-    role: "",
+    role: "Events",
     bio: "",
     image: "/team/apple.jpg",
+  },
+  {
+    name: "Elena",
+    role: "Design/Marketing",
+    bio: "A 1st year PhD student in Neuroscience with a background in Molecular Genetics and interested in how we can use science to improve our understanding of the natural world and apply this to develop better targeted & efficient therapeutics as well as sustainable solutions in production and manufacturing",
+    image: "/team/elena.jpg",
+  },
+  {
+    name: "Zunaira",
+    role: "Logistics",
+    bio: "",
+    image: "/team/zunaira.jpg",
+  },
+  {
+    name: "Saurav",
+    role: "Logistics",
+    bio: "",
+    image: "/team/saurav.jpg",
   },
   {
     name: "Jinxuan",
