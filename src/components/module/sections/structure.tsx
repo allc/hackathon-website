@@ -43,32 +43,36 @@ export default function Structure() {
         <div className="relative">
           <TimelineItem
             icon={<ClipboardDocumentListIcon className="h-6 w-6 text-blue-500" />}
-            date="Oct-Dec 2025"
-            title="Consultation & Planning"
+            date="Deadline 30th Jan 2026"
+            title="Challenge Submission"
           >
-            <p>Surveys, partnerships, and organising committee formation completed.</p>
+            <p>Sponsors challenge submission</p>
+          </TimelineItem>
+          <TimelineItem
+            date="30th Jan 2026"
+            title="Application Opens"
+          >
           </TimelineItem>
           <TimelineItem
             icon={<AcademicCapIcon className="h-6 w-6 text-blue-500" />}
-            date="Jan-Feb 2026"
-            title="Pre-Event Workshops"
+            date="6th - 20th Mar 2026"
+            title="Pre-hackathon Workshops"
           >
             <p>Technical, entrepreneurial, and communication workshops co-delivered with Edinburgh Innovations and the Centre for Engineering Biology.</p>
           </TimelineItem>
           <TimelineItem
             icon={<TrophyIcon className="h-6 w-6 text-blue-500" />}
-            date="Late Mar 2026"
-            title="Flagship BioHackathon"
+            date="20th - 22th Mar 2026 (Subject to change)"
+            title="BioHackathon"
           >
             <p>2-3 day event at <span className="font-semibold">The Nucleus</span>, featuring an opening ceremony, challenge introductions, team sprints, and final project pitches with prizes.</p>
           </TimelineItem>
           <TimelineItem
             icon={<ArrowPathIcon className="h-6 w-6 text-blue-500" />}
             date="Apr 2026 onwards"
-            title="Post-Event Continuation"
+            title="Post-hackathon Workshops"
             isLast
           >
-            <p>Mentoring, project refinement, and launch of a recurring Bio-Innovation community.</p>
           </TimelineItem>
         </div>
       </div>
