@@ -14,7 +14,6 @@ export default withUt({
       fontFamily: {
         mono: ["var(--font-ibm-plex-mono)"],
         geist: ["var(--font-geist-sans)"],
-        hexaframe: ["var(--font-hexaframe)"],
         whyte: ["var(--font-whyte)"],
       },
       borderRadius: {

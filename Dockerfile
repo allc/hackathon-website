@@ -37,7 +37,7 @@ COPY --from=base /app/prisma ./prisma
 
 # Install production dependencies
 RUN npm i -g pnpm
-RUN npm i -g prisma
+RUN npm i -g prisma@6.19.0
 RUN pnpm i --prod
 
 # Expose the port
