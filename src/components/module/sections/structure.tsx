@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import SectionHeader from "../section-header";
-import { ClipboardDocumentListIcon, AcademicCapIcon, TrophyIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
+import { ClipboardDocumentListIcon, AcademicCapIcon, TrophyIcon, ArrowPathIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 
 
 interface TimelineItemProps {
@@ -46,12 +46,14 @@ export default function Structure() {
             date="Deadline 30th Jan 2026"
             title="Challenge Submission"
           >
-            <p>Sponsors challenge submission</p>
+            <p>Sponsors challenge submission.</p>
           </TimelineItem>
           <TimelineItem
+            icon={<CursorArrowRaysIcon className="h-6 w-6 text-blue-500" />}
             date="30th Jan 2026"
             title="Application Opens"
           >
+            <p>Application opens for participants.</p>
           </TimelineItem>
           <TimelineItem
             icon={<AcademicCapIcon className="h-6 w-6 text-blue-500" />}
@@ -69,10 +71,11 @@ export default function Structure() {
           </TimelineItem>
           <TimelineItem
             icon={<ArrowPathIcon className="h-6 w-6 text-blue-500" />}
-            date="Apr 2026 onwards"
+            date="22nd Mar - late April 2026"
             title="Post-hackathon Workshops"
             isLast
           >
+            <></>
           </TimelineItem>
         </div>
       </div>
