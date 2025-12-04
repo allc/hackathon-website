@@ -7,13 +7,6 @@ import { gsap } from "gsap";
 import NavbarLayout from "~/components/layout/navbar-layout";
 import SectionHeader from "../section-header";
 
-type Prize = {
-  // Placeholder prize copy. Keep this as gibberish for now.
-  text: string;
-  // Toggle to reveal actual text later (when set to true).
-  revealed: boolean;
-};
-
 interface SponsorCardProps {
   name: string;
   tier: string;
@@ -22,146 +15,6 @@ interface SponsorCardProps {
   website: string;
   cardRef: React.RefObject<HTMLDivElement>;
 }
-
-// Collapsible container for mobile card with GSAP open/close animation
-const MobileExpander = ({
-  open,
-  id,
-  children,
-}: {
-  open: boolean;
-  id: string;
-  children: React.ReactNode;
-}) => {
-  const wrapperRef = React.useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = wrapperRef.current;
-    if (!el) return;
-
-    if (open) {
-      gsap.fromTo(
-        el,
-        { height: 0, autoAlpha: 0 },
-        { height: "auto", autoAlpha: 1, duration: 0.25, ease: "power2.out" }
-      );
-    } else {
-      gsap.to(el, {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.2,
-        ease: "power2.inOut",
-      });
-    }
-  }, [open]);
-
-  return (
-    <div
-      id={id}
-      ref={wrapperRef}
-      style={{ overflow: "hidden", height: 0, opacity: 0 }}
-      aria-hidden={!open}
-      className="mt-4"
-    >
-      {children}
-    </div>
-  );
-};
-
-// Mobile-only simplified card (no hover GSAP, stacked layout)
-const MobileSponsorCard = ({
-  name,
-  tier,
-  number,
-  website,
-}: Pick<
-  SponsorCardProps,
-  "name" | "tier" | "number" | "website"
->) => {
-  const cornersRef = React.useRef<HTMLDivElement>(null);
-  const contentRef = React.useRef<HTMLDivElement>(null);
-
-  const handleCardClick = () => {
-    window.open(website, "_blank", "noopener,noreferrer");
-  };
-
-  useEffect(() => {
-    const corners = cornersRef.current;
-    const content = contentRef.current;
-    if (!corners || !content) return;
-
-    // Prepare initial state
-    gsap.set(content, { autoAlpha: 0, y: 15, scale: 0.95 });
-    gsap.set(corners.querySelectorAll("svg"), {
-      scale: 0.8,
-      transformOrigin: "center",
-    });
-
-    const tl = gsap.timeline();
-
-    // First animate corners expanding outward
-    tl.to(corners.querySelectorAll("svg"), {
-      scale: 1,
-      duration: 0.4,
-      ease: "back.out(1.7)",
-      stagger: {
-        amount: 0.1,
-        from: "random",
-      },
-    })
-      // Then fade and slide in content with slight bounce
-      .to(
-        content,
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: "back.out(1.2)",
-        },
-        "-=0.2"
-      );
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
-  return (
-    <div
-      className="relative w-full cursor-pointer px-6 pb-10 pt-10 text-black"
-      onClick={handleCardClick}
-    >
-      <div ref={cornersRef}>
-        <CornerBrackets />
-      </div>
-
-      <div ref={contentRef}>
-        <div className="mb-5 flex items-end gap-3">
-          <h2 className="-mb-1 font-whyte text-2xl font-bold uppercase sm:text-3xl">
-            {name}
-          </h2>
-          <div className="mb-1 ml-2 flex items-center gap-2">
-            <div className="h-2 w-2 bg-black" />
-            <p className="text-[0.65rem] font-light uppercase tracking-wide">
-              {tier}
-            </p>
-          </div>
-        </div>
-
-        <div className="my-4 h-px w-full bg-black" />
-
-        <span className="absolute -bottom-4 right-0 inline-block text-[0.6rem] font-light uppercase tracking-wide">
-          {number}
-        </span>
-
-        <span className="absolute -top-4 right-0 inline-block text-[0.8rem] font-light uppercase tracking-wide">
-          +
-        </span>
-      </div>
-    </div>
-  );
-};
 
 const sponsorsData = [
   {
@@ -347,7 +200,6 @@ const SponsorCard = ({
 };
 
 export const SponsorsGrid = () => {
-  const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(null);
   const cardRefs = useRef<Array<React.RefObject<HTMLDivElement>>>(
     sponsorsData.map(() => React.createRef<HTMLDivElement>())
   );
@@ -360,55 +212,22 @@ export const SponsorsGrid = () => {
             <div key={index} className="relative">
               <button
                 type="button"
-                onClick={(e) => {
-                  // Handle mobile sponsor interaction
-                  e.stopPropagation();
-
-                  // Animate corner brackets inward on click
-                  const button = e.currentTarget;
-                  const corners = button.querySelector(
-                    "[data-corner-brackets]"
-                  );
-                  if (corners) {
-                    const svgs = corners.querySelectorAll("svg");
-                    gsap.to(svgs, {
-                      scale: 0.99,
-                      duration: 0.2,
-                      ease: "power4.inOut",
-                      yoyo: true,
-                      repeat: 1,
-                      transformOrigin: "center",
-                    });
-                  }
-
-                  // Toggle mobile expansion
-                  const isCurrentlyOpen = mobileOpenIndex === index;
-                  if (isCurrentlyOpen) {
-                    // If already open, clicking goes to website
-                    window.open(
-                      sponsor.website,
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  } else {
-                    // If not open, expand the card
-                    setMobileOpenIndex(index);
-                  }
-                }}
                 className="relative flex h-40 w-full items-center justify-center p-4 pt-1 sm:h-48 sm:p-6"
-                aria-expanded={mobileOpenIndex === index}
                 aria-controls={`mobile-sponsor-${index}`}
               >
                 <div data-corner-brackets>
                   <CornerBrackets />
                 </div>
-                <Image
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} logo`}
-                  width={160}
-                  height={100}
-                  className="max-h-24 max-w-full object-contain sm:max-h-28"
-                />
+                <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+
+                  <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    width={160}
+                    height={100}
+                    className="max-h-24 max-w-full object-contain sm:max-h-28"
+                  />
+                </a>
                 <span
                   className="absolute bottom-4 left-4 px-1 text-[0.6rem] font-medium uppercase tracking-wide sm:text-sm"
                   // style={{
@@ -438,18 +257,6 @@ export const SponsorsGrid = () => {
                   </svg>
                 </span>
               </button>
-
-              <MobileExpander
-                open={mobileOpenIndex === index}
-                id={`mobile-sponsor-${index}`}
-              >
-                <MobileSponsorCard
-                  name={sponsor.name}
-                  tier={sponsor.tier}
-                  number={sponsor.number}
-                  website={sponsor.website}
-                />
-              </MobileExpander>
             </div>
           ))}
         </div>
@@ -465,13 +272,15 @@ export const SponsorsGrid = () => {
               >
                 <CornerBrackets />
                 <div className="flex items-center justify-center">
-                  <Image
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    width={200}
-                    height={120}
-                    className="max-h-32 max-w-full object-contain"
-                  />
+                  <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      width={200}
+                      height={120}
+                      className="max-h-32 max-w-full object-contain"
+                    />
+                  </a>
                 </div>
                 <span className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] font-light uppercase tracking-wide">
                   <div className="h-2 w-2 bg-black" />
