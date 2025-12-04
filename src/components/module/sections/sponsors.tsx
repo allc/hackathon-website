@@ -17,8 +17,6 @@ type Prize = {
 interface SponsorCardProps {
   name: string;
   tier: string;
-  overview: string;
-  prizes: Array<Prize>;
   number: string;
   logo: string;
   website: string;
@@ -74,13 +72,11 @@ const MobileExpander = ({
 const MobileSponsorCard = ({
   name,
   tier,
-  overview,
-  prizes,
   number,
   website,
 }: Pick<
   SponsorCardProps,
-  "name" | "tier" | "overview" | "prizes" | "number" | "website"
+  "name" | "tier" | "number" | "website"
 >) => {
   const cornersRef = React.useRef<HTMLDivElement>(null);
   const contentRef = React.useRef<HTMLDivElement>(null);
@@ -155,52 +151,6 @@ const MobileSponsorCard = ({
 
         <div className="my-4 h-px w-full bg-black" />
 
-        <div className="space-y-8">
-          <div className="flex flex-col gap-2">
-            <div className="text-[0.8rem] font-light uppercase tracking-wide">
-              Overview:
-            </div>
-            <div className="text-[0.8rem] font-light uppercase tracking-wide">
-              {overview}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="text-[0.8rem] font-light uppercase tracking-wide">
-              Prizes:
-            </div>
-            <ul className="space-y-1 text-[0.8rem] font-light uppercase tracking-wide">
-              {prizes.map((prize, i) => {
-                const labels = ["1ST PRIZE", "2ND PRIZE", "3RD PRIZE"];
-                const label = labels[i] ?? `${i + 1}TH PRIZE`;
-                if (name==="Huawei" && i===2) return null; // Huawei has no 3rd prize
-                return (
-                  <li key={i} className="flex items-center gap-3">
-                    <span className="shrink-0">{label}:</span>
-                    {prize.revealed ? (
-                      <span className="normal-case leading-relaxed">
-                        {prize.text}
-                      </span>
-                    ) : (
-                      <span
-                        aria-label="redacted"
-                        className="inline-block w-fit align-middle"
-                      >
-                        <span
-                          className="overflow-hidden bg-black"
-                          style={{ userSelect: "none" }}
-                        >
-                          {prize.text}
-                        </span>
-                      </span>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-
         <span className="absolute -bottom-4 right-0 inline-block text-[0.6rem] font-light uppercase tracking-wide">
           {number}
         </span>
@@ -215,69 +165,32 @@ const MobileSponsorCard = ({
 
 const sponsorsData = [
   {
-    name: "Huawei",
-    tier: "PLATINUM",
-    overview:
-      "A leading global provider of ICT infrastructure and smart devices, headquartered in Shenzhen, operating across telecom networks, cloud/AI and consumer electronics.",
-    prizes: [
-      { text: "xra vurg ran jolt max", revealed: false },
-      { text: "zor plix meta flux", revealed: false },
-      { text: "", revealed: false },
-    ],
-    number: "02",
-    logo: "/sponsors/huwaei.svg",
-    website: "https://www.huawei.com/en/",
+    name: "OpenBioSim",
+    tier: "Sponsor",
+    number: "01",
+    logo: "/sponsors/openbiosim.svg",
+    website: "https://www.openbiosim.org/",
   },
   {
-    name: "G-Research",
-    tier: "PLATINUM",
-    overview:
-      "A leading quantitative research and technology firm applying scientific rigor and advanced ML to predict movements in global financial markets.",
-    prizes: [
-      { text: "sigma nova grid pack", revealed: false },
-      { text: "tensor flux keyset", revealed: false },
-      { text: "alpha kit delta", revealed: false },
-    ],
-    number: "01",
-    logo: "/sponsors/g-research.svg",
-    website: "https://www.gresearch.com",
+    name: "Digital Research Services",
+    tier: "GPU Provider",
+    number: "02",
+    logo: "/sponsors/drs.png",
+    website: "https://digitalresearchservices.ed.ac.uk/",
   },
 
   {
-    name: "Optiver",
-    tier: "GOLD",
-    overview:
-      "A global, tech-driven market maker providing liquidity across 50+ exchanges since 1986, trading derivatives, equities, ETFs, bonds and FX.",
-    prizes: [
-      { text: "neo rig vanta", revealed: false },
-      { text: "mecha key array", revealed: false },
-      { text: "pro swag stack", revealed: false },
-    ],
+    name: "School of Physics and Astronomy",
+    tier: "Student Experience Grants",
     number: "03",
-    logo: "/sponsors/optiver.svg",
-    website: "https://optiver.com",
-  },
-  {
-    name: "Bending Spoons",
-    tier: "SILVER",
-    overview:
-      "An Italian tech company that owns and operates popular digital products—including Evernote, Meetup, Remini and WeTransfer.",
-    prizes: [
-      { text: "suite pro delta", revealed: false },
-      { text: "accessory nova", revealed: false },
-      { text: "brand pack plus", revealed: false },
-    ],
-    number: "04",
-    logo: "/sponsors/bending-spoons.png",
-    website: "https://bendingspoons.com",
+    logo: "/sponsors/ph.jpeg",
+    website: "https://www.ph.ed.ac.uk",
   },
 ];
 
 const SponsorCard = ({
   name,
   tier,
-  overview,
-  prizes,
   number,
   website,
   cardRef,
@@ -390,10 +303,10 @@ const SponsorCard = ({
         <CornerBrackets />
       </div>
 
-      <div className="mb-6 flex flex-wrap items-end gap-3 sm:gap-4">
+      <div className="mb-6 flex-wrap items-end gap-3 sm:gap-4">
         <h1
           ref={titleRef}
-          className="-mb-5 mt-3 flex cursor-pointer items-center gap-3 font-whyte text-3xl font-bold uppercase leading-none sm:text-4xl md:text-5xl"
+          className="mt-3 flex cursor-pointer items-center gap-3 font-whyte text-3xl font-bold leading-none sm:text-4xl md:text-4xl"
         >
           {name}
         </h1>
@@ -402,53 +315,6 @@ const SponsorCard = ({
           <p className="-mb-1 text-xs font-light uppercase tracking-wide sm:text-xs">
             {tier}
           </p>
-        </div>
-      </div>
-
-      <div className="my-6 h-px w-full bg-black sm:my-8" />
-
-      <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
-        <div className="flex flex-row gap-3 sm:gap-4">
-          <div className="text-[0.8rem] font-light uppercase tracking-wide">
-            Overview:
-          </div>
-          <div className="text-[0.8rem] font-light uppercase tracking-wide">
-            {overview}
-          </div>
-        </div>
-        <div className="flex flex-row gap-3 sm:gap-4">
-          <div className="text-[0.8rem] font-light uppercase tracking-wide">
-            Prizes:
-          </div>
-          <ul className="space-y-1 text-[0.8rem] font-light uppercase tracking-wide">
-            {prizes.map((prize, i) => {
-              const labels = ["1ST PRIZE", "2ND PRIZE", "3RD PRIZE"];
-              const label = labels[i] ?? `${i + 1}TH PRIZE`;
-              if (name==="Huawei" && i===2) return null; // Huawei has no 3rd prize
-              return (
-                <li key={i} className="flex items-center gap-3">
-                  <span className="shrink-0">{label}:</span>
-                  {prize.revealed ? (
-                    <span className="normal-case leading-relaxed">
-                      {prize.text}
-                    </span>
-                  ) : (
-                    <span
-                      aria-label="redacted"
-                      className="inline-block w-fit align-middle"
-                    >
-                      <span
-                        className="user-select-none overflow-hidden bg-black"
-                        style={{ userSelect: "none" }}
-                      >
-                        {prize.text}
-                      </span>
-                    </span>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </div>
 
@@ -580,8 +446,6 @@ export const SponsorsGrid = () => {
                 <MobileSponsorCard
                   name={sponsor.name}
                   tier={sponsor.tier}
-                  overview={sponsor.overview}
-                  prizes={sponsor.prizes}
                   number={sponsor.number}
                   website={sponsor.website}
                 />
@@ -597,13 +461,13 @@ export const SponsorsGrid = () => {
             <div className="lg:sticky lg:top-28 lg:w-80 lg:self-start">
               <div
                 className="flex items-center justify-center overflow-hidden p-8"
-                style={{ height: "300px" }} // Initial height
+                style={{ height: "200px" }} // Initial height
               >
                 <CornerBrackets />
                 <div className="flex items-center justify-center">
                   <Image
                     src={sponsor.logo}
-                    alt="Sponsor logo"
+                    alt={`${sponsor.name} logo`}
                     width={200}
                     height={120}
                     className="max-h-32 max-w-full object-contain"
@@ -611,17 +475,15 @@ export const SponsorsGrid = () => {
                 </div>
                 <span className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] font-light uppercase tracking-wide">
                   <div className="h-2 w-2 bg-black" />
-                  [LOGO]
+                  [{sponsor.name}]
                 </span>
               </div>
             </div>
             <div className="flex-1">
-              <div className="max-w-6xl space-y-8"  style={{ height: "300px" }}>
+              <div className="max-w-6xl space-y-8"  style={{ height: "200px" }}>
                 <SponsorCard
                   name={sponsor.name}
                   tier={sponsor.tier}
-                  overview={sponsor.overview}
-                  prizes={sponsor.prizes}
                   number={sponsor.number}
                   logo={sponsor.logo}
                   website={sponsor.website}
