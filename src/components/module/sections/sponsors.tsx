@@ -22,7 +22,6 @@ interface SponsorCardProps {
   number: string;
   logo: string;
   website: string;
-  onHover: () => void;
   cardRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -281,7 +280,6 @@ const SponsorCard = ({
   prizes,
   number,
   website,
-  onHover,
   cardRef,
 }: SponsorCardProps) => {
   const cornerBracketsRef = useRef<HTMLDivElement>(null);
@@ -386,7 +384,6 @@ const SponsorCard = ({
     <div
       ref={cardRef}
       className="group relative h-full w-full cursor-pointer px-10 pb-8 pt-7 text-black transition-shadow duration-300"
-      onMouseEnter={onHover}
       onClick={handleCardClick}
     >
       <div ref={cornerBracketsRef}>
@@ -484,183 +481,10 @@ const SponsorCard = ({
 };
 
 export const SponsorsGrid = () => {
-  const [currentLogo, setCurrentLogo] = useState(
-    sponsorsData[0]?.logo || "/sponsors/optiver.svg"
-  );
   const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(null);
-  const logoContainerRef = useRef<HTMLDivElement>(null);
-  const logoImageRef = useRef<HTMLImageElement>(null);
   const cardRefs = useRef<Array<React.RefObject<HTMLDivElement>>>(
     sponsorsData.map(() => React.createRef<HTMLDivElement>())
   );
-  const gridContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Set initial logo and position to match first card
-    const setupInitialPosition = () => {
-      if (
-        logoImageRef.current &&
-        logoContainerRef.current &&
-        cardRefs.current[0]?.current
-      ) {
-        gsap.set(logoImageRef.current, { opacity: 1, scale: 1 });
-
-        // Position logo container to match first card initially
-        const firstCard = cardRefs.current[0].current;
-        const logoContainer = logoContainerRef.current;
-        const logoContainerParent = logoContainer.parentElement;
-
-        if (!logoContainerParent) return;
-
-        const firstCardRect = firstCard.getBoundingClientRect();
-        const logoParentRect = logoContainerParent.getBoundingClientRect();
-
-        // Calculate the initial Y position relative to the logo container's parent
-        const initialY = firstCardRect.top - logoParentRect.top;
-
-        // Ensure the initial position is not negative (above the first card)
-        const constrainedInitialY = Math.max(0, initialY);
-
-        gsap.set(logoContainer, {
-          y: constrainedInitialY,
-          height: firstCardRect.height,
-        });
-      } else {
-        // If elements aren't ready yet, try again on next frame
-        requestAnimationFrame(setupInitialPosition);
-      }
-    };
-
-    // Handle window resize to recalculate positions
-    const handleResize = () => {
-      setupInitialPosition();
-    };
-
-    // Delay initial setup to ensure elements are rendered
-    const timeoutId = setTimeout(setupInitialPosition, 100);
-
-    // Add resize listener
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  // Removed scroll-into-view behavior for mobile expansion
-
-  // Clamp the logo container within the bounds of the first and last cards on scroll/resize
-  useEffect(() => {
-    const clampLogoPosition = () => {
-      const logoContainer = logoContainerRef.current;
-      const firstCard = cardRefs.current[0]?.current;
-      const lastCard = cardRefs.current[cardRefs.current.length - 1]?.current;
-      if (!logoContainer || !firstCard || !lastCard) return;
-
-      const parent = logoContainer.parentElement;
-      if (!parent) return;
-
-      const parentRect = parent.getBoundingClientRect();
-      const firstRect = firstCard.getBoundingClientRect();
-      const lastRect = lastCard.getBoundingClientRect();
-
-      const currentY = Number(gsap.getProperty(logoContainer, "y")) || 0;
-      const currentH = logoContainer.getBoundingClientRect().height;
-
-      const minY = firstRect.top - parentRect.top;
-      const maxY = lastRect.bottom - parentRect.top - currentH;
-
-      const clampedY = Math.max(minY, Math.min(currentY, maxY));
-      if (clampedY !== currentY) {
-        gsap.to(logoContainer, {
-          y: clampedY,
-          duration: 0.2,
-          ease: "power2.out",
-        });
-      }
-    };
-
-    const onScroll = () => clampLogoPosition();
-    const onResize = () => clampLogoPosition();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
-    clampLogoPosition();
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
-    };
-  }, []);
-
-  const handleSponsorHover = (index: number, logo: string) => {
-    const logoContainer = logoContainerRef.current;
-    const logoImage = logoImageRef.current;
-    const hoveredCard = cardRefs.current[index]?.current;
-    const gridContainer = gridContainerRef.current;
-
-    if (!logoContainer || !logoImage || !hoveredCard || !gridContainer) return;
-
-    // Get the logo container's parent element
-    const logoContainerParent = logoContainer.parentElement;
-    if (!logoContainerParent) return;
-
-    // Get positions relative to the logo container's parent
-    const cardRect = hoveredCard.getBoundingClientRect();
-    const logoParentRect = logoContainerParent.getBoundingClientRect();
-
-    // Calculate the target Y position relative to the logo container's parent
-    let targetY = cardRect.top - logoParentRect.top;
-    const targetHeight = cardRect.height;
-
-    // Get first and last card positions for boundary constraints
-    const firstCard = cardRefs.current[0]?.current;
-    const lastCard = cardRefs.current[cardRefs.current.length - 1]?.current;
-
-    if (firstCard && lastCard) {
-      const firstCardRect = firstCard.getBoundingClientRect();
-      const lastCardRect = lastCard.getBoundingClientRect();
-
-      // Calculate boundaries relative to logo parent
-      const minY = firstCardRect.top - logoParentRect.top;
-      const maxY = lastCardRect.bottom - logoParentRect.top - targetHeight;
-
-      // Constrain the target position within boundaries
-      targetY = Math.max(minY, Math.min(targetY, maxY));
-    }
-
-    // Move logo container to match card position and height
-    gsap.to(logoContainer, {
-      y: targetY,
-      height: targetHeight,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-
-    // Change logo with same animation specs as Framer Motion version
-    if (currentLogo !== logo) {
-      gsap.to(logoImage, {
-        opacity: 0,
-        scale: 0.8,
-        y: 20,
-        duration: 0.2,
-        ease: "power2.inOut",
-        onComplete: () => {
-          setCurrentLogo(logo);
-          gsap.fromTo(
-            logoImage,
-            { opacity: 0, scale: 0.8, y: -20 },
-            {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              duration: 0.2,
-              ease: "power2.inOut",
-            }
-          );
-        },
-      });
-    }
-  };
 
   return (
     <div className="h-full w-full px-4 sm:px-8">
@@ -767,35 +591,32 @@ export const SponsorsGrid = () => {
         </div>
       </div>
 
-      <div className="hidden flex-col gap-8 lg:flex lg:flex-row lg:gap-12">
-        <div className="lg:sticky lg:top-28 lg:w-80 lg:self-start">
-          <div
-            ref={logoContainerRef}
-            className="flex items-center justify-center overflow-hidden p-8"
-            style={{ height: "300px" }} // Initial height
-          >
-            <CornerBrackets />
-            <div className="flex items-center justify-center">
-              <Image
-                ref={logoImageRef}
-                src={currentLogo}
-                alt="Sponsor logo"
-                width={200}
-                height={120}
-                className="max-h-32 max-w-full object-contain"
-              />
+      {sponsorsData.map((sponsor, index) => (
+        <div key={index}>
+          <div className="hidden flex-col gap-8 lg:flex lg:flex-row lg:gap-12 pb-8">
+            <div className="lg:sticky lg:top-28 lg:w-80 lg:self-start">
+              <div
+                className="flex items-center justify-center overflow-hidden p-8"
+                style={{ height: "300px" }} // Initial height
+              >
+                <CornerBrackets />
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={sponsor.logo}
+                    alt="Sponsor logo"
+                    width={200}
+                    height={120}
+                    className="max-h-32 max-w-full object-contain"
+                  />
+                </div>
+                <span className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] font-light uppercase tracking-wide">
+                  <div className="h-2 w-2 bg-black" />
+                  [LOGO]
+                </span>
+              </div>
             </div>
-            <span className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] font-light uppercase tracking-wide">
-              <div className="h-2 w-2 bg-black" />
-              [LOGO]
-            </span>
-          </div>
-        </div>
-
-        <div className="flex-1">
-          <div ref={gridContainerRef} className="max-w-6xl space-y-8">
-            {sponsorsData.map((sponsor, index) => (
-              <div key={index}>
+            <div className="flex-1">
+              <div className="max-w-6xl space-y-8"  style={{ height: "300px" }}>
                 <SponsorCard
                   name={sponsor.name}
                   tier={sponsor.tier}
@@ -804,14 +625,14 @@ export const SponsorsGrid = () => {
                   number={sponsor.number}
                   logo={sponsor.logo}
                   website={sponsor.website}
-                  onHover={() => handleSponsorHover(index, sponsor.logo)}
                   cardRef={cardRefs.current[index]!}
                 />
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
+      ))}
+
     </div>
   );
 };
