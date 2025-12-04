@@ -311,7 +311,7 @@ export default function Sponsors() {
   return (
     <NavbarLayout className="relative min-h-screen w-full py-16 sm:py-24">
       <SectionHeader
-        title="Sponsor/Partners"
+        title="Sponsor & Partners"
         subtitle="Meet the organizations making this hackathon possible"
         className="mb-10"
       />
