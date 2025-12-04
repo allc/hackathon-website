@@ -25,19 +25,18 @@ const sponsorsData = [
     website: "https://www.openbiosim.org/",
   },
   {
-    name: "Digital Research Services",
-    tier: "GPU Provider",
-    number: "02",
-    logo: "/sponsors/drs.png",
-    website: "https://digitalresearchservices.ed.ac.uk/",
-  },
-
-  {
     name: "School of Physics and Astronomy",
-    tier: "Student Experience Grants",
-    number: "03",
+    tier: "Partner",
+    number: "02",
     logo: "/sponsors/ph.jpeg",
     website: "https://www.ph.ed.ac.uk",
+  },
+  {
+    name: "Digital Research Services",
+    tier: "GPU Provider",
+    number: "03",
+    logo: "/sponsors/drs.png",
+    website: "https://digitalresearchservices.ed.ac.uk/",
   },
 ];
 
