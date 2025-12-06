@@ -79,7 +79,7 @@ const FooterSection = ({
         <div className="h-1.5 w-1.5 bg-white sm:h-1 sm:w-1" />
         <p className="text-[0.5rem] uppercase text-white">{title}</p>
       </div>
-      <div className="md:h-aut mb-1 flex h-28 flex-col gap-2">
+      <div className="md:h-aut mb-1 flex flex-col gap-2">
         {items.map((item, index) => (
           <a
             href={item.href}

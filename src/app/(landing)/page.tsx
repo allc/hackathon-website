@@ -55,13 +55,6 @@ export default function Page() {
         </NavbarLayout>
       </div>
 
-      {/* <div
-        id="sponsors"
-        className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
-      >
-        <Sponsors />
-      </div> */}
-
       <div id="structure" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
         <NavbarLayout>
           <Structure />
@@ -72,6 +65,13 @@ export default function Page() {
         <NavbarLayout>
           <Team />
         </NavbarLayout>
+      </div>
+
+      <div
+        id="sponsors"
+        className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
+      >
+        <Sponsors />
       </div>
 
       <div
