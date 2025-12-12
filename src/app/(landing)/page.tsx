@@ -4,7 +4,6 @@ import NavbarLayout from "~/components/layout/navbar-layout";
 import { hackathonEvents } from "~/lib/constants/schedule";
 import ScheduleTimeline from "~/components/module/schedule-timeline";
 import SectionHeader from "~/components/module/section-header";
-import Volunteer from "~/components/module/sections/volunteer";
 import FAQSection from "~/components/module/sections/faq";
 import Sponsors from "~/components/module/sections/sponsors";
 import Team from "~/components/module/sections/team";
@@ -28,7 +27,22 @@ export default function Page() {
         </NavbarLayout>
       </div>
 
-      {/* <div
+      <div
+        id="tracks"
+        className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
+      >
+        <NavbarLayout>
+          <Tracks />
+        </NavbarLayout>
+      </div>
+
+      <div id="structure" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
+        <NavbarLayout>
+          <Structure />
+        </NavbarLayout>
+      </div>
+
+      <div
         id="schedule"
         className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
       >
@@ -43,21 +57,6 @@ export default function Page() {
             <span className="inline-block h-1 w-1 bg-black" />
             <span>Keep scrolling to see the full schedule</span>
           </p>
-        </NavbarLayout>
-      </div> */}
-
-      <div
-        id="tracks"
-        className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40"
-      >
-        <NavbarLayout>
-          <Tracks />
-        </NavbarLayout>
-      </div>
-
-      <div id="structure" className="scroll-mt-24 md:scroll-mt-28 2xl:scroll-mt-40">
-        <NavbarLayout>
-          <Structure />
         </NavbarLayout>
       </div>
 

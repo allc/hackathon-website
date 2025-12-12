@@ -20,10 +20,7 @@ interface ScheduleTimelineProps {
   dayRowHeight?: number;
 }
 
-type DayChunks = Array<
-  | { kind: "gap"; minutes: number }
-  | { kind: "event"; minutes: number; event: Event }
->;
+type DayChunks = Array<{ minutes: number; event: Event }>;
 
 const toMinutes = (hhmm: string): number => {
   const [h = 0, m = 0] = hhmm.split(":").map(Number);
@@ -74,23 +71,20 @@ function buildChunksForDay(
   const normalized = dayEvents
     .map((e) => {
       const s = clamp(toMinutes(e.start), startWindow, endWindow);
-      const t = clamp(toMinutes(e.end), startWindow, endWindow);
-      return t > s ? { ...e, _s: s, _t: t } : null;
+      if (e.end) {
+        const t = clamp(toMinutes(e.end), startWindow, endWindow);
+        return t > s ? { ...e, _s: s, _t: t } : null;
+      }
+      return { ...e, _s: s, _t: s };
     })
     .filter((v): v is Event & { _s: number; _t: number } => !!v)
     .sort((a, b) => a._s - b._s || a._t - b._t);
 
   const chunks: DayChunks = [];
-  let cursor = startWindow;
 
   for (const e of normalized) {
-    if (e._s > cursor) chunks.push({ kind: "gap", minutes: e._s - cursor });
-    chunks.push({ kind: "event", minutes: e._t - e._s, event: e });
-    cursor = e._t;
+    chunks.push({ minutes: e._t - e._s, event: e });
   }
-
-  if (cursor < endWindow)
-    chunks.push({ kind: "gap", minutes: endWindow - cursor });
   return chunks;
 }
 
@@ -99,17 +93,8 @@ export default function ScheduleTimeline({
   startHour = 9,
   endHour = 23,
   className = "",
-  pxPerHour = typeof window !== "undefined" &&
-  window.matchMedia("(max-width: 768px)").matches
-    ? 300
-    : 330, // 300 on desktop, 330 on mobile
-  compressAfterMinutes = 60,
-  gapCompressFactor = 0.25,
   minEventWidth = 120, // Increased from 80 to 120 for better readability
-  dayRowHeight = typeof window !== "undefined" &&
-  window.matchMedia("(max-width: 768px)").matches
-    ? 280 // mobile
-    : 330,
+  dayRowHeight = 500,
 }: ScheduleTimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -122,24 +107,6 @@ export default function ScheduleTimeline({
       ),
     [eventsByDay]
   );
-
-  const pxPerMinute = pxPerHour / 60;
-
-  const widthForGap = (gapMinutes: number) => {
-    if (gapMinutes <= 0) return 0;
-    const full = Math.min(gapMinutes, compressAfterMinutes) * pxPerMinute;
-    const extra =
-      Math.max(0, gapMinutes - compressAfterMinutes) *
-      pxPerMinute *
-      gapCompressFactor;
-    return full + extra;
-  };
-
-  const widthForEvent = (eventMinutes: number) => {
-    // Ensure minimum width for better readability, especially for 30-minute slots
-    const calculatedWidth = eventMinutes * pxPerMinute;
-    return Math.max(minEventWidth * 1.2, calculatedWidth);
-  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -299,7 +266,6 @@ export default function ScheduleTimeline({
               <div
                 key={day}
                 className="flex flex-shrink-0 border-r border-gray-200 last:border-r-0"
-                style={{ minWidth: "100vw" }}
               >
                 <div className="hidden w-64 flex-shrink-0 flex-col justify-center p-6 md:flex">
                   <div className="relative flex items-end gap-1 text-7xl font-bold leading-none">
@@ -342,73 +308,61 @@ export default function ScheduleTimeline({
                       aria-label={`${dayOrdinal} ${monthNameTitle} timeline`}
                     >
                       <div className="flex items-stretch">
-                        {chunks.map((chunk, idx) => {
-                          if (chunk.kind === "gap") {
-                            const w = widthForGap(chunk.minutes);
-                            return (
-                              <div
-                                key={`gap-${idx}`}
-                                className="hidden shrink-0 md:block"
-                                style={{ width: `${w}px` }}
-                                aria-hidden
-                              />
-                            );
-                          }
+                        <article
+                          data-event-card
+                          className="relative mx-1.5 flex w-auto max-w-[70vw] shrink-0 flex-col overflow-hidden bg-white transition-transform duration-300 md:mx-2"
+                          style={{
+                            width: '500px',
+                            height: `${dayRowHeight - 32}px`,
+                            minWidth: `${minEventWidth * 1.2}px`, // Ensure minimum width
+                          }}
+                        >
+                          <div
+                            data-card-overlay
+                            className="absolute inset-0 bg-black"
+                            style={{
+                              clipPath: "inset(0 calc(100% - 2px) 0 0)",
+                              willChange: "clip-path",
+                            }}
+                          />
 
-                          const w = widthForEvent(chunk.minutes);
-                          const e = chunk.event;
+                          <div
+                            data-card-content
+                            className="relative z-10 flex h-full flex-col p-4"
+                            style={{
+                              color: "rgb(24 24 27)",
+                              willChange: "color",
+                            }}
+                          >
+                            {chunks.map((chunk) => {
+                              const e = chunk.event;
 
-                          return (
-                            <article
-                              key={e.id}
-                              data-event-card
-                              className="relative mx-1.5 flex w-auto max-w-[70vw] shrink-0 flex-col overflow-hidden bg-white transition-transform duration-300 md:mx-2"
-                              style={{
-                                width: `${w}px`,
-                                height: `${dayRowHeight - 32}px`,
-                                minWidth: `${minEventWidth * 1.2}px`, // Ensure minimum width
-                              }}
-                            >
-                              <div
-                                data-card-overlay
-                                className="absolute inset-0 bg-black"
-                                style={{
-                                  clipPath: "inset(0 calc(100% - 2px) 0 0)",
-                                  willChange: "clip-path",
-                                }}
-                              />
-
-                              <div
-                                data-card-content
-                                className="relative z-10 flex h-full flex-col p-4"
-                                style={{
-                                  color: "rgb(24 24 27)",
-                                  willChange: "color",
-                                }}
-                              >
-                                <div className="mb-3 whitespace-nowrap text-xs font-light 2xl:text-sm">
-                                  {e.start} – {e.end}
-                                </div>
-
-                                <div className="mb-2 break-words font-whyte text-base font-bold leading-tight sm:text-base xl:text-xl 2xl:text-2xl">
-                                  {e.title}
-                                </div>
-
-                                {e.location && (
-                                  <div className="mb-2 break-words text-xs font-medium underline opacity-90">
-                                    {e.location}
+                              return (
+                                <div key={e.id} className="mb-4">
+                                  <div className="break-words font-whyte text-base font-bold leading-tight sm:text-base xl:text-xl 2xl:text-2xl">
+                                    {e.title}
                                   </div>
-                                )}
 
-                                {e.description && (
-                                  <div className="mt-auto line-clamp-4 flex-1 overflow-hidden text-xs leading-relaxed opacity-80">
-                                    {e.description}
+                                  <div className="whitespace-nowrap text-xs font-light 2xl:text-sm">
+                                    {e.start}{e.end && ` - ${e.end}`}
                                   </div>
-                                )}
-                              </div>
-                            </article>
-                          );
-                        })}
+
+                                  {e.location && (
+                                    <div className="break-words text-xs font-medium underline opacity-90">
+                                      {e.location}
+                                    </div>
+                                  )}
+
+                                  {e.description && (
+                                    <div className="mt-auto line-clamp-4 flex-1 overflow-hidden text-xs leading-relaxed opacity-80">
+                                      {e.description}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </article>
                       </div>
                     </div>
 
