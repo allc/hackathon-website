@@ -32,9 +32,16 @@ const sponsorsData = [
     website: "https://www.ph.ed.ac.uk",
   },
   {
+    name: "Student Experience Grants",
+    tier: "Sponsor",
+    number: "03",
+    logo: "/sponsors/experience-grants.jpeg",
+    website: "https://www.ed.ac.uk/student-experience-grants",
+  },
+  {
     name: "Digital Research Services",
     tier: "GPU Provider",
-    number: "03",
+    number: "04",
     logo: "/sponsors/drs.png",
     website: "https://digitalresearchservices.ed.ac.uk/",
   },

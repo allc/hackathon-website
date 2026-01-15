@@ -15,7 +15,6 @@ export const hackathonEvents: Event[] = [
     start: "13:00",
     end: "14:00",
     title: "Registration",
-    location: "@NUCLEUS_FOYER",
   },
   {
     id: "opening-ceremony",
@@ -23,7 +22,6 @@ export const hackathonEvents: Event[] = [
     start: "14:00",
     end: "15:00",
     title: "Opening Ceremony",
-    location: "@OAK_LECTURE_THEATRE",
   },
   {
     id: "networking",
