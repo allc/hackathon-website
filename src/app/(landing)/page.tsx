@@ -5,6 +5,7 @@ import { hackathonEvents } from "~/lib/constants/schedule";
 import ScheduleTimeline from "~/components/module/schedule-timeline";
 import SectionHeader from "~/components/module/section-header";
 import FAQSection from "~/components/module/sections/faq";
+import FAQSponsors from "~/components/module/sections/faq-sponsors";
 import Sponsors from "~/components/module/sections/sponsors";
 import Team from "~/components/module/sections/team";
 import { Main } from "~/components/module/sections/main";
@@ -78,6 +79,13 @@ export default function Page() {
         className={`mx-auto w-full scroll-mt-24 py-16 md:scroll-mt-28 md:py-24 md:pl-[4.2rem] md:pr-[1.25rem] 2xl:min-w-[1200px] 2xl:max-w-[1400px] 2xl:scroll-mt-40`}
       >
         <FAQSection />
+      </div>
+
+      <div
+        id="faq-sponsors"
+        className={`mx-auto w-full scroll-mt-24 py-16 md:scroll-mt-28 md:py-24 md:pl-[4.2rem] md:pr-[1.25rem] 2xl:min-w-[1200px] 2xl:max-w-[1400px] 2xl:scroll-mt-40`}
+      >
+        <FAQSponsors />
       </div>
 
       {/* <div

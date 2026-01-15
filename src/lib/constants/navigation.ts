@@ -12,7 +12,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "/#team", label: "TEAM" },
   { href: "/#sponsors", label: "SPONSOR" },
   { href: "/#faq", label: "FAQ" },
-  // { href: "/#volunteer", label: "VOLUNTEER" },
+  { href: "/#faq-sponsors", label: "FOR SPONSORS" },
 ];
 
 export const SOCIAL_LINKS: NavLink[] = [
