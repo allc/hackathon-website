@@ -26,7 +26,7 @@ const sponsorsData = [
   },
   {
     name: "School of Physics and Astronomy",
-    tier: "Partner",
+    tier: "Sponsor",
     number: "02",
     logo: "/sponsors/ph.jpeg",
     website: "https://www.ph.ed.ac.uk",
