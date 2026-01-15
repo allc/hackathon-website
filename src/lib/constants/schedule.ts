@@ -64,35 +64,16 @@ export const hackathonEvents: Event[] = [
     title: "Breakfast",
   },
   {
-    id: "break-day-2-morning",
-    day: "2026-03-21",
-    start: "10:30",
-    title: "Mental Health Break",
-  },
-  {
     id: "lunch-day-2",
     day: "2026-03-21",
     start: "12:00",
     title: "Lunch",
   },
   {
-    id: "break-day-2-afternoon",
-    day: "2026-03-21",
-    start: "15:00",
-    title: "Mental Health Break",
-  },
-  {
     id: "dinner-day-2",
     day: "2026-03-21",
     start: "18:00",
     title: "Dinner",
-  },
-  {
-    id: "break-day-2-evening",
-    day: "2026-03-21",
-    start: "20:30",
-    title: "Mental Health Break",
-    description: "With board games",
   },
   {
     id: "end-of-day-2",
@@ -105,12 +86,6 @@ export const hackathonEvents: Event[] = [
     day: "2026-03-22",
     start: "8:00",
     title: "Breakfast",
-  },
-  {
-    id: "break-day-3",
-    day: "2026-03-22",
-    start: "10:30",
-    title: "Mental Health Break",
   },
   {
     id: "submission",

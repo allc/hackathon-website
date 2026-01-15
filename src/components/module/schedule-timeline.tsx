@@ -94,7 +94,7 @@ export default function ScheduleTimeline({
   endHour = 23,
   className = "",
   minEventWidth = 120, // Increased from 80 to 120 for better readability
-  dayRowHeight = 500,
+  dayRowHeight = 550,
 }: ScheduleTimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
