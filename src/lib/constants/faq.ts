@@ -21,7 +21,7 @@ export const FAQS = [
   },
   {
     q: "How much time commitment is expected?",
-    a: ' Workshops are <span class="font-semibold">optional</span> and can be selected based on individual skill levels. The hackathon itself will likely run <span class="font-semibold">over a weekend (2-3 days)</span> or as a <span class="font-semibold">hybrid week-long event</span> with in-person sessions at the beginning and end, and flexible online collaboration in between.',
+    a: 'Pre-hackathon workshops are <span class="font-semibold">optional</span> and can be selected based on skill levels. The main hackathon runs <span class="font-semibold">20-22 March 2026</span> with an opening session on Friday afternoon and final judging and awards on Sunday afternoon. Teams may work on-site, online, or in a hybrid format during the weekend.',
   },
   {
     q: "How can someone propose a challenge or get involved as a mentor or sponsor?",
