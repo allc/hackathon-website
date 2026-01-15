@@ -29,7 +29,7 @@ export const FAQS = [
   },
   {
     q: "What are the key dates?",
-    a: 'Final dates for the workshops and the main BioHackathon are <span class="font-semibold">to be confirmed</span>, but the event is planned for <span class="font-semibold">Spring 2026</span>.',
+    a: '<span class="font-semibold">Pre-hackathon workshops:</span> late February - mid March 2026<br /><span class="font-semibold">BioHackathon:</span> 20 - 22 March 2026<br />(All dates subject to minor adjustments)',
   },
   {
     q: "Will there be opportunities for projects to continue after the hackathon?",

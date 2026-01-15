@@ -46,7 +46,7 @@ export default function Structure() {
             date="Deadline 30th Jan 2026"
             title="Challenge Submission"
           >
-            <p>Sponsors challenge submission.</p>
+            <p>Sponsors <a href="https://forms.office.com/e/kZaw6FTEYR"><span className="underline">challenge submission</span></a>.</p>
           </TimelineItem>
           <TimelineItem
             icon={<CursorArrowRaysIcon className="h-6 w-6 text-blue-500" />}
