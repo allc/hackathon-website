@@ -62,6 +62,13 @@ export const hackathonEvents: Event[] = [
     title: "Breakfast",
   },
   {
+    id: "workshop-day-2",
+    day: "2026-03-21",
+    start: "10:00",
+    end: "11:00",
+    title: "Workshops",
+  },
+  {
     id: "lunch-day-2",
     day: "2026-03-21",
     start: "12:00",
