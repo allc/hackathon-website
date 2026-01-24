@@ -25,6 +25,13 @@ const sponsorsData = [
     website: "https://www.openbiosim.org/",
   },
   {
+    name: "Amytis",
+    tier: "Sponsor",
+    number: "02",
+    logo: "/sponsors/amytis.jpeg",
+    website: "https://www.amytis.io/",
+  },
+  {
     name: "School of Physics and Astronomy",
     tier: "Sponsor",
     number: "02",
