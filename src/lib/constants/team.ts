@@ -57,6 +57,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/team/saurav.jpg",
   },
   {
+    name: "Hari",
+    role: "Logistics",
+    bio: "",
+    image: "/team/hari.jpeg",
+  },
+  {
+    name: "Connor",
+    role: "Logistics",
+    bio: "",
+    image: "/team/connor.jpeg",
+  },
+  {
     name: "Jinxuan",
     role: "Tech",
     bio: "meow",
@@ -68,5 +80,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Advisor",
     bio: "",
     image: "/team/davide.jpg",
+  },
+  {
+    name: "Tanmay",
+    role: "External Judge",
+    bio: "",
+    image: "/team/tanmay.jpg",
   },
 ];
