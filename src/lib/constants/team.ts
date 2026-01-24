@@ -11,8 +11,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Ian Yang",
     role: "Director",
-    bio: "",
+    bio: "Click to email Ian",
     image: "/team/ian.jpg",
+    link: "mailto:ian.yang@ed.ac.uk",
   },
   {
     name: "Adriana",
@@ -23,8 +24,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Apple",
     role: "Events",
-    bio: "",
+    bio: "Click to email Apple",
     image: "/team/apple.jpg",
+    link: "mailto:y.chew@ed.ac.uk",
   },
   {
     name: "Horace",
