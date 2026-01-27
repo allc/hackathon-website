@@ -2,6 +2,7 @@
 
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import Image from "next/image";
 import React from "react";
 
 if (typeof window !== "undefined" && !(gsap as any)._footerPlugins) {
@@ -98,7 +99,6 @@ const FooterSection = ({
 };
 
 import { NAV_LINKS, SOCIAL_LINKS } from "~/lib/constants/navigation";
-import { COPYRIGHT_TEXT } from "~/lib/constants/site";
 
 const Footer = () => {
   return (
@@ -110,6 +110,18 @@ const Footer = () => {
           <span className="mt-2 text-[0.6rem] font-thin uppercase text-white opacity-50">
             Building a Collaborative Bio-AI Innovation Community
           </span>
+          <div className="mt-6 flex items-end">
+            <Image
+              src="/primed.png"
+              width={50}
+              height={50}
+              alt="PRIMED Logo"
+              className="mr-2"
+            />
+            <span className="font-thin text-[0.8rem]">
+              Organised by PRIMED Edinburgh
+            </span>
+          </div>
         </div>
       </div>
 
