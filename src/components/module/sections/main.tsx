@@ -1,15 +1,15 @@
-// import backgroundImage from '../../../../public/htb-photos/team.png'; // placeholder image for now
+import backgroundImage from '../../../../public/primed_bg.png';
 
 export const Main = () => (
   <div
     className="relative flex h-full w-full items-center justify-center"
     style={{
-      // backgroundImage: `url('${backgroundImage.src}')`,
+      backgroundImage: `url('${backgroundImage.src}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}
   >
-    <div className="absolute inset-0 bg-black opacity-80"></div>
+    <div className="absolute inset-0 bg-black opacity-40"></div>
     <div className="relative flex scale-90 transform flex-col items-center px-4 text-center sm:scale-100">
       <h1 className="mt-3 text-4xl font-extrabold text-white sm:text-6xl md:text-6xl 2xl:text-6xl">
         BioHackathon Edinburgh 2026
