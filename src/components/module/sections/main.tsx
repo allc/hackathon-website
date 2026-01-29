@@ -25,14 +25,8 @@ export const Main = () => (
       </p>
 
       <div className="mt-8 flex w-full max-w-xl items-center justify-center gap-6 sm:mt-10">
-        <a href="https://forms.office.com/e/Wm4nmLv3px" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
-          Register Interest
-        </a>
-        <a href="https://forms.office.com/e/kZaw6FTEYR" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
-          Submit a Challenge
-        </a>
-        <a href="mailto:ian.yang@ed.ac.uk" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
-          Email
+        <a href="https://forms.gle/XTx73urXEnToMaV38" target="_blank" className="bg-blue-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-blue-800">
+          Apply to Participate
         </a>
       </div>
     </div>
