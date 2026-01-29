@@ -100,6 +100,12 @@ export default function FAQSponsors() {
         className="pl-8 sm:pl-10 2xl:pl-0"
       />
 
+      <div className="mt-6 flex w-full items-center justify-center sm:mt-8 md:mt-10">
+        <a href="https://forms.office.com/e/kZaw6FTEYR" className="bg-gray-700 px-5 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-gray-800">
+          Submit Challenges
+        </a>
+      </div>
+
       <div className="mt-8 md:mt-10">
         <ul className="divide-y divide-gray-200 border border-gray-200 bg-white">
           {FAQS.map((item, idx) => {
