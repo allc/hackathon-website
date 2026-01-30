@@ -1,9 +1,7 @@
 import "~/styles/globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
-import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
-import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 import { type Metadata } from "next";
 
