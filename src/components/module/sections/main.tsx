@@ -18,7 +18,9 @@ export const Main = () => (
         Building a Collaborative Bio-AI Innovation Community
       </p>
       <p className="mt-6 max-w-4xl px-2 text-center text-white">
-        20th - 22nd Mar 2026
+        20th - 22nd Mar 2026 | The University of Edinburgh
+        <br />
+        Edinburgh Futures Institute (Friday) & The Nucleus Building (Saturday & Sunday)
       </p>
       <p className="mt-6 max-w-3xl px-2 text-center text-white">
         Opens to <span className="font-semibold">undergraduate, postgraduate taught, and postgraduate research students, postdocs, and academic staff</span> from <span className="font-semibold">all UK universities</span> interested in biological and computational innovation. <span className="underline"><a className="font-semibold" href="#:~:text=For%20participants,design%20thinking.">No coding experience required</a></span>.
