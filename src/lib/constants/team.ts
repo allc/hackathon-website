@@ -37,8 +37,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Javi",
     role: "Events",
-    bio: "",
+    bio: "Click to email Javi",
     image: "/team/javi.jpg",
+    link: "mailto:J.Mazo-Gonzalez-Choren@sms.ed.ac.uk",
   },
   {
     name: "Elena",

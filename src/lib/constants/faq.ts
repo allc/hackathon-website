@@ -9,7 +9,7 @@ export const FAQS = [
   },
   {
     q: "How are teams formed?",
-    a: 'Participants can <span class="font-semibold">apply as individuals or as teams</span> of 3-6 members. Individual applicants will have the chance to form teams during <span class="font-semibold">in-person networking and team formation sessions</span> prior to the event.',
+    a: 'Participants can <span class="font-semibold">apply as individuals or as teams</span> of 4-6 members. Individual applicants will have the chance to form teams during <span class="font-semibold">in-person networking and team formation sessions</span> prior to the event.',
   },
   {
     q: "Will there be prizes or certificates?",

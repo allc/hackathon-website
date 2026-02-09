@@ -87,6 +87,13 @@ const sponsorsData = [
     logo: "/sponsors/drs.png",
     website: "https://digitalresearchservices.ed.ac.uk/",
   },
+  {
+    name: "Hackathon UK",
+    tier: "Partner",
+    number: "11",
+    logo: "/sponsors/huk.svg",
+    website: "https://www.hackathons.org.uk/",
+  },
 ];
 
 const SponsorCard = ({

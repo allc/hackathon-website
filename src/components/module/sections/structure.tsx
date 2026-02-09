@@ -35,7 +35,7 @@ export default function Structure() {
   return (
     <section className="pb-10 sm:pb-16">
       <SectionHeader
-        title="Structure & Timeline"
+        title="Timeline"
         subtitle=""
       />
 
@@ -43,17 +43,11 @@ export default function Structure() {
         <div className="relative">
           <TimelineItem
             icon={<ClipboardDocumentListIcon className="h-6 w-6 text-blue-500" />}
-            date="Deadline 30th Jan 2026"
-            title="Challenge Submission"
+            date="Deadline end of 13th Feb 2026"
+            title="Application"
           >
-            <p>Sponsors <a href="https://forms.office.com/e/kZaw6FTEYR"><span className="underline">challenge submission</span></a>.</p>
-          </TimelineItem>
-          <TimelineItem
-            icon={<CursorArrowRaysIcon className="h-6 w-6 text-blue-500" />}
-            date="30th Jan 2026"
-            title="Application Opens"
-          >
-            <p>Application opens for participants.</p>
+            <p><a href="https://forms.gle/XTx73urXEnToMaV38" target="_blank"><span className="underline">Submit application here</span></a>, application deadline is end of 13th Feb.</p>
+            <p>Application outcome by 20 February. If successful - confirmation of your attendance by 27 February - we'll need your confirmation to secure your place at the hackathon</p>
           </TimelineItem>
           <TimelineItem
             icon={<AcademicCapIcon className="h-6 w-6 text-blue-500" />}
