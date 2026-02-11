@@ -31,6 +31,11 @@ export const Main = () => (
           Apply to Participate
         </a>
       </div>
+      <div className="mt-6 text-sm text-white opacity-70">
+        <a href='https://ed-ac-uk.zoom.us/rec/share/d1KokWKCHh4d7G8MoMey2-RDgS5xH76n69EcGiozLMk1PbsQa_1la1jaTjXwi8rx.6r61kEJnHQP3O9O3' target="_blank" className="mt-6 text-sm font-medium text-white underline">
+          Watch the Q&A Session Recording
+        </a>
+      </div>
     </div>
   </div>
 );
