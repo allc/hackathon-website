@@ -46,8 +46,7 @@ export default function Structure() {
             date="Deadline end of 13th Feb 2026"
             title="Application"
           >
-            <p><a href="https://forms.gle/XTx73urXEnToMaV38" target="_blank"><span className="underline">Submit application here</span></a>, application deadline is end of 13th Feb.</p>
-            <p>Application outcome by 20 February. If successful - confirmation of your attendance by 27 February - we'll need your confirmation to secure your place at the hackathon</p>
+            <p>Application closed.</p>
           </TimelineItem>
           <TimelineItem
             icon={<AcademicCapIcon className="h-6 w-6 text-blue-500" />}
