@@ -53,7 +53,7 @@ export default function Structure() {
             date="6th - 20th Mar 2026"
             title="Pre-hackathon Workshops"
           >
-            <p> Technical, entrepreneurial, and communication workshops co-delivered with <span className="underline"><a href="#sponsors">sponsors & partners</a></span>.</p>
+            <p>Technical, entrepreneurial, and communication workshops co-delivered with <span className="underline"><a href="#sponsors">sponsors & partners</a></span>.</p>
           </TimelineItem>
           <TimelineItem
             icon={<TrophyIcon className="h-6 w-6 text-blue-500" />}

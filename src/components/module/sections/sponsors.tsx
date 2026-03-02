@@ -67,6 +67,13 @@ const sponsorsData = [
     website: "https://quasdrinks.co.uk/",
   },
   {
+    name: "Pacifico Biolabs",
+    tier: "Sponsor",
+    number: "08",
+    logo: "/sponsors/pacifico.svg",
+    website: "https://www.pacifico.bio/",
+  },
+  {
     name: "School of Physics and Astronomy",
     tier: "Sponsor",
     number: "08",
