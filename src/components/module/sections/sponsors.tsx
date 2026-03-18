@@ -102,7 +102,7 @@ const sponsorsData = [
     website: "https://digitalresearchservices.ed.ac.uk/",
   },
   {
-    name: "Hackathon UK",
+    name: "Hackathons UK",
     tier: "Partner",
     number: "12",
     logo: "/sponsors/huk.svg",
